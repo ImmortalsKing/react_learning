@@ -1,20 +1,6 @@
 import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
+// import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
-var test = "Salam Salam Salam"
-
-createRoot(document.getElementById('root')).render(
-  <div className="" style={
-    {
-      backgroundColor: "red",
-      width: "120px"
-    }
-  }>
-    <span>
-      {/* bezaaaaaaaaaaaaaaaaaaan */}
-      {test}
-      hello world
-      <img />
-      <input />
-    </span>
-    <div></div>
-  </div>);
+createRoot(document.getElementById('root')).render(<App />);

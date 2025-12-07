@@ -1,0 +1,10 @@
+/* @import "tailwindcss"; */
+
+/* App Styles */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image: linear-gradient(to right, rgb(122, 164, 255), rgb(66, 66, 255), rgb(21, 21, 255));
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
