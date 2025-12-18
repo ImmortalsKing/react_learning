@@ -1,30 +1,23 @@
-import styles from './App.module.css'
-import { useEffect, useState } from 'react';
+import { useState } from "react";
+import UserList from "./UserList";
+import { Route, Routes } from "react-router";
+import AddUser from "./AddUser";
+
 
 const App = () => {
-  const[text,setText] = useState('');
-
-  useEffect(() => {
-    document.getElementById('text').focus();
-  },[]);
-
   return (
-    <div className={`${styles.container} ${text && styles.expand}`}>
-      <h1 className="title">فرم ورودی</h1>
-      <div>
-        <input id="text" value={text} onChange={e => setText(e.target.value)} className={styles.inputText} type="text" placeholder="متن خود را وارد کنید..."/>
+    <div className="bg-neutral-200">
+      <h1 className=" font-bold text-4xl mx-4 my-8">سامانه مدیریت کاربران</h1>
+      <UserList />
+      <div className="flex flex-col gap-5 w-full h-40 bg-amber-500">
+        <h1 className="font-bold text-2xl mt-6">فوتر</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis provident mollitia reiciendis alias non. Facere pariatur explicabo voluptas ratione, amet neque ex dicta. Facere, porro assumenda est error id beatae.</p>
       </div>
-      {text && 
-      <div className={styles.showContainer}>
-        <p className={styles.showText}>{text}</p>
-      </div>
-      }
-      <div className={styles.btnsEl}>
-        <button onClick={() => setText('')} className={`${styles.btns} ${styles.deleteBtn}`}>پاک کردن</button>
-        <button className={`${styles.btns} ${styles.sendBtn}`}>ارسال</button>
-      </div>
+      <Routes>
+        <Route path={"/add-user"} element={<AddUser />} />
+      </Routes>
     </div>
-  );
+  )
 };
 
 export default App;
